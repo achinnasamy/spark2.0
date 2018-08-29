@@ -23,6 +23,7 @@ public class MapPartitions {
         JavaRDD<Integer> dataRDD = javaSparkContext.parallelize(Arrays.asList(1,9200,3,4,5), 1);
 
 
+
         //dataRDD.map(each -> each + 1).foreach(each -> System.out.println(each));
 
         dataRDD.mapPartitions(iterator -> {

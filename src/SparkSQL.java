@@ -16,14 +16,22 @@ public class SparkSQL {
                                         .csv("/Users/dharshekthvel/ac/code/scalatrainingintellij/data/auth.csv");
 
 
+        df.createOrReplaceTempView("AUTH_TABLE");
+
+        sparkSession.sql("SELECT * FROM AUTH_TABLE").show();
+
 
         //df.show();
         //df.printSchema();
 
-        //df.select("aua", "sa").show();
 
-        //df.select(df.col("aua").plus(1)).show();
-        df.select(df.col("aua").gt(34000)).show();
+        /* Untyped - Operations  */
+
+        //  df.select("aua", "sa").show();
+        //
+        //  df.select(df.col("aua").plus(1)).show();
+        //  df.select(df.col("aua").gt(34000)).show();
+        //  df.groupBy("aua").count().show();
 
     }
 
